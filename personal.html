@@ -17,14 +17,33 @@
         }
         body{
             text-align: center;
+            
         }
+        .slide-heading {
+  font-size: 2rem;
+  color: #0ea5e9;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
         
       </style>
 </head>
 <body>
     <img src="caution.png"  alt="" height ="150px" width="auto">
-    <h1>😡It is personal adlin. .</h1>
-    <h1>So, don't make others read👀</h1>
+    <h1 class="slide-heading">😡It is personal adlin. .</h1>
+    <h1 class="slide-heading">So, don't make others read👀</h1>
     <button type="button" class="btn btn-outline-light">
         <a href="./main.html">Click here</a></button>
         <div>

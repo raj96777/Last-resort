@@ -17,7 +17,24 @@
         }
         body{
             text-align: center;
+            
         }
+        .rainbow-text {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ADE80, #FACC15);
+  background-size: 400% 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbowMove 6s ease infinite;
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
         
       </style>
 
@@ -28,9 +45,9 @@
  
   
     <img  src="./cross.gif" alt="" height="250px" weight="auto">
-    <h1>👋🏻Hi! Adlin </h1>
+    <h1>👋🏻</h1><h1 class="rainbow-text">Hi! Adlin </h1>
     <img src="infj.jpg" alt="" height ="150px" width="auto">
-    <h1>Welcome to my inner world</h1>
+    <h1 class="rainbow-text">Welcome to my inner world</h1>
     
   </div>
     
