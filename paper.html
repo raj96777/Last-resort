@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
   <title>Confetti Burst</title>
   <style>
     body {
@@ -15,7 +16,6 @@
     }
 
     div {
-      
       color: blueviolet;
     }
 
@@ -26,33 +26,32 @@
       pointer-events: none;
       z-index: 9999;
     }
- 
   </style>
 </head>
 <body>
 
   <canvas id="confetti-canvas"></canvas>
+
   <div>
     <h1>You can access this website wherever you can. <br>
         whenever you want to speak with me, <br>
         you can message in this website.
     Don't share this link to anyone. <br>
 They can misuse</h1>
-        <div>
-            <button type="button" class="btn btn-outline-light">
-                <a href="./main.html">Click here</a></button>
-         </div>
+    <div>
+      <button type="button" class="btn btn-outline-light">
+        <a href="./main.html">Click here</a>
+      </button>
+    </div>
         
-          <h3>you said that you didn't have any phone. <br>
+    <h3>you said that you didn't have any phone. <br>
         I want to buy a new phone for you. <br>
         But, Circumstances are not conducive <br>
         I created this website for you. <br>
-        </h3>
+    </h3>
   </div>
 
-
   <script>
-    // Confetti burst effect using canvas
     const canvas = document.getElementById('confetti-canvas');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
@@ -84,7 +83,6 @@ They can misuse</h1>
         ctx.lineTo(c.x + c.tilt, c.y + c.tilt + c.r / 2);
         ctx.stroke();
       });
-
       update();
     }
 
@@ -101,9 +99,11 @@ They can misuse</h1>
       });
     }
 
+    let animationId;
+
     function loop() {
       draw();
-      requestAnimationFrame(loop);
+      animationId = requestAnimationFrame(loop);
     }
 
     window.addEventListener('resize', () => {
@@ -113,6 +113,12 @@ They can misuse</h1>
 
     // Start animation
     loop();
+
+    // Stop animation and clear canvas after 3 seconds
+    setTimeout(() => {
+      cancelAnimationFrame(animationId);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }, 3000);
   </script>
 
 </body>
