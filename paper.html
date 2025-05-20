@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confetti Burst</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    div {
+      
+      color: blueviolet;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+ 
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+  <div>
+    <h1>You can access this website wherever you can. <br>
+        whenever you want to speak with me, <br>
+        you can message in this website</h1>
+        <div>
+            <button type="button" class="btn btn-outline-light">
+                <a href="./main.html">Click here</a></button>
+         </div>
+        
+          <h3>you said that you didn't have any phone. <br>
+        I want to buy a new phone for you. <br>
+        But, Circumstances are not conducive <br>
+        I created this website for you. <br>
+        </h3>
+  </div>
+
+
+  <script>
+    // Confetti burst effect using canvas
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const confetti = [];
+    const colors = ['#fce18a', '#ff726d', '#b48def', '#f4306d', '#00d2ff'];
+
+    for (let i = 0; i < 200; i++) {
+      confetti.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        r: Math.random() * 6 + 4,
+        d: Math.random() * 200 + 50,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        tilt: Math.floor(Math.random() * 10) - 10,
+        tiltAngle: 0,
+        tiltAngleIncrement: Math.random() * 0.07 + 0.05
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confetti.forEach(c => {
+        ctx.beginPath();
+        ctx.lineWidth = c.r;
+        ctx.strokeStyle = c.color;
+        ctx.moveTo(c.x + c.tilt + c.r / 2, c.y);
+        ctx.lineTo(c.x + c.tilt, c.y + c.tilt + c.r / 2);
+        ctx.stroke();
+      });
+
+      update();
+    }
+
+    function update() {
+      confetti.forEach(c => {
+        c.y += Math.cos(c.d) + 2 + c.r / 2;
+        c.tiltAngle += c.tiltAngleIncrement;
+        c.tilt = Math.sin(c.tiltAngle) * 15;
+
+        if (c.y > canvas.height) {
+          c.y = -10;
+          c.x = Math.random() * canvas.width;
+        }
+      });
+    }
+
+    function loop() {
+      draw();
+      requestAnimationFrame(loop);
+    }
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Start animation
+    loop();
+  </script>
+
+</body>
+</html>
