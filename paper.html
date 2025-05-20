@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confetti Burst with Smooth Fade Out</title>
   <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
-  <title>Confetti Burst</title>
   <style>
     body {
       margin: 0;
@@ -73,8 +73,14 @@ They can misuse</h1>
       });
     }
 
+    let opacity = 1;       // Start fully visible
+    let fadeOut = false;   // Flag for fade out
+    let animationId;
+
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.globalAlpha = opacity;  // Apply current opacity
+
       confetti.forEach(c => {
         ctx.beginPath();
         ctx.lineWidth = c.r;
@@ -83,6 +89,8 @@ They can misuse</h1>
         ctx.lineTo(c.x + c.tilt, c.y + c.tilt + c.r / 2);
         ctx.stroke();
       });
+
+      ctx.globalAlpha = 1; // Reset alpha for other drawings
       update();
     }
 
@@ -99,10 +107,19 @@ They can misuse</h1>
       });
     }
 
-    let animationId;
-
     function loop() {
       draw();
+
+      if (fadeOut) {
+        opacity -= 0.01;   // Reduce opacity gradually
+        if (opacity <= 0) {
+          opacity = 0;
+          cancelAnimationFrame(animationId);
+          ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear fully
+          return;  // Stop animation
+        }
+      }
+
       animationId = requestAnimationFrame(loop);
     }
 
@@ -111,13 +128,11 @@ They can misuse</h1>
       canvas.height = window.innerHeight;
     });
 
-    // Start animation
-    loop();
+    loop(); // Start animation
 
-    // Stop animation and clear canvas after 3 seconds
+    // Trigger fade out after 3 seconds
     setTimeout(() => {
-      cancelAnimationFrame(animationId);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      fadeOut = true;
     }, 3000);
   </script>
 
