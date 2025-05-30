@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Last resort</title>
   <style>
+    /* Reset some defaults */
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       background: #f0e6ff;
       display: flex;
       justify-content: center;
@@ -15,26 +16,62 @@
       font-family: Arial, sans-serif;
       color: #4a2673;
       text-align: center;
+      padding: 1rem;
+      box-sizing: border-box;
     }
+
     .container {
       background: white;
-      padding: 2rem 3rem;
+      padding: 2.5rem 3rem;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(101, 39, 141, 0.3);
       max-width: 480px;
       width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
     img {
       max-width: 100%;
       height: auto;
       margin-bottom: 20px;
       border-radius: 10px;
+      display: block;
     }
+
+    /* Profile picture specific styles */
+    .profile-pic {
+      border-radius: 50%;
+      max-width: 150px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    /* Responsive heading sizes */
     h1 {
       margin: 0.5rem 0;
       font-weight: bold;
-      font-size: 2.5rem;
+      color: #4a2673;
     }
+
+    h1.emoji {
+      font-size: 3rem;
+    }
+
+    h1.name {
+      font-size: 2.25rem;
+    }
+
+    h1.welcome {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-top: 10px;
+      color: #5a3d82;
+    }
+
+    /* Button styling */
     .btn-outline-light {
       display: inline-block;
       padding: 12px 28px;
@@ -45,25 +82,55 @@
       border-radius: 50px;
       text-transform: uppercase;
       text-decoration: none;
-      margin-top: 20px;
+      margin-top: 25px;
       cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease;
+      min-width: 180px;
+      text-align: center;
     }
-    .btn-outline-light:hover {
+    .btn-outline-light:hover,
+    .btn-outline-light:focus {
       background-color: #7d3f98;
       color: white;
+      outline: none;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .container {
+        padding: 2rem 1.5rem;
+        max-width: 100%;
+        margin: 0 0.5rem;
+      }
+      h1.emoji {
+        font-size: 2.5rem;
+      }
+      h1.name {
+        font-size: 1.8rem;
+      }
+      h1.welcome {
+        font-size: 1.4rem;
+      }
+      .btn-outline-light {
+        padding: 10px 22px;
+        font-size: 1rem;
+        min-width: 150px;
+      }
+      .profile-pic {
+        max-width: 120px;
+        margin: 15px auto;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" role="main" aria-label="Welcome message">
     <img src="./cross.gif" alt="Welcome Animation" />
-    <h1>👋🏻</h1>
-    <h1>Hi! Adlin</h1>
-    <img src="infj.jpg" alt="Profile Picture" style="border-radius:50%; max-width:150px; margin: 20px auto; display:block;" />
-    <h1>Welcome to my inner world</h1>
-
-    <a href="./personal.html" class="btn-outline-light">Click here</a>
+    <h1 class="emoji" aria-hidden="true">👋🏻</h1>
+    <h1 class="name">Hi! Adlin</h1>
+    <img src="infj.jpg" alt="Profile Picture of Adlin" class="profile-pic" />
+    <h1 class="welcome">Welcome to my inner world</h1>
+    <a href="./personal.html" class="btn-outline-light" role="button">Click here</a>
   </div>
 </body>
 </html>
