@@ -3,66 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Confetti Burst with Smooth Fade Out</title>
+  <title>Message for You</title>
   <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
-      padding-top: 100px;
+      padding: 2rem 1rem 5rem;
       background: linear-gradient(to bottom right, #fbeaff, #ffeaff);
       color: #4b0082;
       overflow-x: hidden;
     }
 
+    h1, h3 {
+      margin: 2rem 0;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
     h1 {
       font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      display: inline-block;
     }
 
     h3 {
       font-size: 1.2rem;
-      font-weight: 500;
-      padding: 1rem 1.5rem;
-      margin-top: 2rem;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 10px;
-      display: inline-block;
     }
 
     .btn-outline-light {
-      background-color: #e8d8ff;
+      background-color: transparent;
       color: #4b0082;
       border: 2px solid #7d3f98;
       font-weight: 600;
       font-size: 1.1rem;
-      padding: 0.6rem 1.5rem;
-      margin: 1.5rem auto;
+      padding: 0.7rem 1.8rem;
+      margin: 2rem auto;
       border-radius: 50px;
-      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+      transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
-      box-shadow: 0 4px 10px rgba(160, 130, 255, 0.3);
     }
 
     .btn-outline-light:hover,
     .btn-outline-light:focus {
       background-color: #7d3f98;
-      color: #fff;
+      color: white;
       transform: scale(1.05);
       outline: none;
-    }
-
-    .btn-outline-light a {
-      text-decoration: none;
-      color: inherit;
     }
 
     canvas {
@@ -72,31 +59,39 @@
       pointer-events: none;
       z-index: 9999;
     }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 1rem;
+      }
+      .btn-outline-light {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
 
   <canvas id="confetti-canvas"></canvas>
 
-  <div>
-    <h1>
-      You can access this website wherever you can. <br>
-      Whenever you want to speak with me, <br>
-      you can message in this website. <br>
-      <br>
-      <strong>Don't share this link to anyone. <br> They can misuse it.</strong>
-    </h1>
+  <h1>
+    You can access this website wherever you can.<br>
+    Whenever you want to speak with me,<br>
+    you can message in this website.<br><br>
+    <strong>Don't share this link to anyone.<br>They can misuse it.</strong>
+  </h1>
 
-    <div>
-      <a href="./main.html" class="btn btn-outline-light">Click here</a>
-    </div>
+  <a href="./main.html" class="btn btn-outline-light">Click here</a>
 
-    <h3>
-      You said that you didn't have any phone. <br>
-      But, I want to connect with you. <br>
-      I created this website for you.
-    </h3>
-  </div>
+  <h3>
+    You said that you didn't have any phone.<br>
+    But, I want to connect with you.<br>
+    I created this website for you.
+  </h3>
 
   <script>
     const canvas = document.getElementById('confetti-canvas');
