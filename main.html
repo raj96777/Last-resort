@@ -1,119 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
-    <style>
-        h1 {
-          color: #610a5d;
-          font-size: 48px;
-          text-align: center;
-          font-family: Arial, sans-serif;
-          margin-top: 50px;
-          
-          
-        }
-        body{
-            text-align: center;
-            
-        }
-        .fancy-heading {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 28px;
-    color: #e91e63;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  }
-      </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Message</title>
+  <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #ecd2f7, #f2bcf7);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #4a2c63;
+      text-align: center;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    h3 {
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    h2.fancy-heading {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #d6336c;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 2rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 1.5rem;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(101, 39, 141, 0.3);
+    }
+
+    span.phone-number {
+      color: #1c0033;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .btn-outline-light {
+      background-color: #e8d8ff;
+      color: #1c0033;
+      border: 2px solid #7d3f98;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.6rem 2rem;
+      margin: 0.8rem 0;
+      border-radius: 50px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(160, 130, 255, 0.2);
+    }
+
+    .btn-outline-light:hover,
+    .btn-outline-light:focus {
+      background-color: #7d3f98;
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(160, 130, 255, 0.3);
+      outline: none;
+      text-decoration: none;
+    }
+
+    .btn-outline-light a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    h3.colored-no {
+      color: #b42a3b;
+    }
+
+    h3.colored-yes {
+      color: #2a8b3b;
+    }
+  </style>
 </head>
 <body>
-    <div>
-        <img src="endglitter.gif" alt="" height="200px" width="300px" >
-    </div>
-    <div>
-        <h3>My sister helped me to speak with you. But, you ran away🏃‍♀️.I think you forgot everything. I WANT TO SPEAK WITH YOU 😔 </h3>
-    </div>
-    <div>
-        <h3>
-            Place and time : ....  <br>
-            This is my phone number: <br> <span style="color: blueviolet;">9677788813 </span> <br>
-            Message or call to this number   
-        </h3>
-    </div>
-    <div>
-        <h3>Take time...   <br>
-            I will wait     <br>
-            Or 
-            </h3>
-    </div>
-</div>
-    
-<button type="button" class="btn btn-outline-light">
-  <a href="./send a message.html">Click here to message</a></button>
+  <img src="endglitter.gif" alt="Glitter Decoration" height="200" width="300" />
 
-</div> 
-</div>
-    
-<button type="button" class="btn btn-outline-light">
-  <a href="./reply.html">Click here to see my reply</a></button>
+  <h3>My sister helped me to speak with you. But, you ran away🏃‍♀️. I think you forgot everything. I WANT TO SPEAK WITH YOU 😔</h3>
 
-</div> 
-    <div>
-        <h3>
-            I want to know whether you like me or not.
-            Say yes or no directly 🗣🗣whatever it is, I am ok. You must say
-        </h3>
-    </div>
-    <div>
-        <h3>
-            This is the first and last time that I ask to you.  If you say
-        </h3>
-    </div>
-    <div>
-        <h3>
-            🟥No, It will never happen again🙅‍♂️
-        </h3>
-    </div>
-    <div>
-        <h3>
-            🟩Yes. I will wait........
-        </h3>
-    </div>
-    <div>
-        <h3>
-            I remember everything. If you have any doubt, you can ask questions🙋‍♀️.
-        </h3>
-    </div>
-    <div>
-        <img src="holding.avif" alt="" height="250px"
-        style="border: 0.7px solid rebeccapurple;">
-    </div>
-    
+  <h3>
+    Place and time: ....<br />
+    This is my phone number:<br />
+    <span class="phone-number">9677788813</span><br />
+    Message or call to this number
+  </h3>
 
+  <h3>
+    Take time...<br />
+    I will wait<br />
+    Or
+  </h3>
 
-</div>
-    
-<button type="button" class="btn btn-outline-light">
-  <a href="./I Love You.html">Click here to see my heart</a></button>
+  <a href="./send a message.html" class="btn-outline-light">✉️ Click here to message</a>
 
-</div> 
-<div>
-    <h2 class="fancy-heading">
-        I know you wear the white dress on the first sunday. <br>
-        if you really like me, <br>
-        Wear the pink dress for me in June 1. <br>
-        
+  <a href="./reply.html" class="btn-outline-light">👀 Click here to see my reply</a>
 
-   unless you wear,<br>
-    I understand that you do not like me.</h2>
-</div>
+  <h3>
+    I want to know whether you like me or not.<br />
+    Say yes or no directly 🗣🗣 whatever it is, I am ok. You must say
+  </h3>
 
-<div>
-    <img src="endglitter.gif" alt="" height="200px" width="300px" >
-</div>
+  <h3>This is the first and last time that I ask to you. If you say</h3>
+
+  <h3 class="colored-no">🟥 No, It will never happen again 🙅‍♂️</h3>
+
+  <h3 class="colored-yes">🟩 Yes. I will wait........</h3>
+
+  <h3>I remember everything. If you have any doubt, you can ask questions 🙋‍♀️</h3>
+
+  <img src="holding.avif" alt="Holding hands" height="250" style="border: 1px solid rebeccapurple" />
+
+  <a href="./I Love You.html" class="btn-outline-light">❤️ Click here to see my heart</a>
+
+  <h2 class="fancy-heading">
+    I know you wear the white dress on the first Sunday.<br />
+    If you really like me,<br />
+    Wear the pink dress for me on June 1.<br />
+    Unless you wear,<br />
+    I understand that you do not like me.
+  </h2>
+
+  <img src="endglitter.gif" alt="Glitter Decoration" height="200" width="300" />
 </body>
 </html>
-

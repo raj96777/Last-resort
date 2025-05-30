@@ -1,80 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Love You</title>
-    <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
-    <style>
-        .img-fullscreen {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I Love You</title>
+  <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom right, #fff1f8, #fbeaff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #33055e;
     }
-    div{
-        color: rgb(51, 5, 94);
-        text-align: center;
 
+    .content-box {
+      max-width: 900px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 2s ease-in-out;
     }
-    .clr{
-        color:rgb(255, 0, 0);
+
+    .content-box img {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      margin: 1rem 0;
+      animation: fadeInUp 1.5s ease-in-out;
     }
-    </style>
+
+    .clr {
+      color: crimson;
+      font-weight: bold;
+      margin-top: 2rem;
+    }
+
+    h2 {
+      line-height: 2;
+      margin-top: 1.5rem;
+      animation: textGlow 4s infinite alternate ease-in-out;
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      font-style: italic;
+      color: #c71585;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-top: 1rem;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes textGlow {
+      0% {
+        text-shadow: 0 0 5px #ff85c1, 0 0 10px #eaa3f1;
+      }
+      100% {
+        text-shadow: 0 0 10px #ff6ec7, 0 0 20px #d89cfb;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .content-box {
+        padding: 1rem;
+      }
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      img {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="gif-border">
-        <img src="I love you.gif" alt="Full Page Image" height="250px" width="auto" >
-        <p>Adlin! You got a 72 percentage and the mark is 432. 
-            <br> I think You expected high marks. <br>
-            But, you did not get it. It is ok. <br>
-            Mark does not matter. <br>
-            You spoke with pastor amma. I heard your voice. <br>
-            But, you did not notice and your voice was so sweet. <br>
-            </p>
-            <h3>Please, Don't say "I don't know you"</h3>
-            <img src="cry.gif" alt="" height="200px" width="350px">
-            
-      <div>
-      <div>
-        <h1 class="clr">Your favourite lines I remember</h1>
-        <h2>அழகான வார்த்தை நீ என்றால்…<br>
 
-            முற்று புள்ளி வெட்கம்…<br>
-            
-            மெதுவாக உன்னை வர்ணித்தால்…<br>
-            
-            மூழ்கி சொக்கி நிற்கும்…<br>
-            <br>
-            
-            
-            
-            அணு சிதைவில்லாமல் பெண்ணில் மின்சாரம்…<br>
-            
-            இருவரி கவிதைகள் மின்னும் இதழாகும்…<br>
-            <br>
-            
-            
-            
-            அட மேல் உதட்டை கீழ் உதட்டை…<br>
-            
-            ஈரம் செய்யும் நேரம்…<br>
-            
-            உயிர் மேலிருந்து கீழ் இறங்கி…<br>
-            
-            என்னென்னவோ ஆகும்…<br>
-            <br>
-            
-            
-            
-            இது தீண்டளுக்கும் தூண்டலுக்கும்…<br>
-            
-            இடையில் உள்ள மோகம்…<br>
-            
-            முத்த தேனில் மூழ்க முன்நேரம்…</h2>
-      </div>  
-      <div>
-        <img src="kiss.jpg" alt="" height="200px" width="350px">
-      </div>
+  <div class="content-box text-center">
+    <img src="I love you.gif" alt="I love you" height="250" />
+
+    <p>
+      Adlin! You got a 72 percentage and the mark is 432. <br>
+      I think You expected high marks. <br>
+      But, you did not get it. It is ok. <br>
+      Mark does not matter. <br>
+      You spoke with pastor amma. I heard your voice. <br>
+      But, you did not notice and your voice was so sweet.
+    </p>
+
+    <h3>Please, Don't say "I don't know you"</h3>
+
+    <img src="cry.gif" alt="Crying" height="200" width="350" />
+
+    <h1 class="clr">Your favourite lines I remember</h1>
+
+    <h2>
+      அழகான வார்த்தை நீ என்றால்… <br>
+      முற்று புள்ளி வெட்கம்… <br>
+      மெதுவாக உன்னை வர்ணித்தால்… <br>
+      மூழ்கி சொக்கி நிற்கும்… <br><br>
+
+      அணு சிதைவில்லாமல் பெண்ணில் மின்சாரம்… <br>
+      இருவரி கவிதைகள் மின்னும் இதழாகும்… <br><br>
+
+      அட மேல் உதட்டை கீழ் உதட்டை… <br>
+      ஈரம் செய்யும் நேரம்… <br>
+      உயிர் மேலிருந்து கீழ் இறங்கி… <br>
+      என்னென்னவோ ஆகும்… <br><br>
+
+      இது தீண்டளுக்கும் தூண்டலுக்கும்… <br>
+      இடையில் உள்ள மோகம்… <br>
+      முத்த தேனில் மூழ்க முன்நேரம்…
+    </h2>
+
+    <img src="kiss.jpg" alt="Kiss" height="200" width="350" />
+  </div>
+
 </body>
 </html>
-

@@ -1,54 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
-    <style>
-        h1 {
-          color: #610a5d;
-          font-size: 48px;
-          text-align: center;
-          font-family: Arial, sans-serif;
-          margin-top: 50px;
-          
-          
-        }
-        body{
-            text-align: center;
-            
-        }
-        .slide-heading {
-  font-size: 2rem;
-  color: #0ea5e9;
-  font-weight: 700;
-  opacity: 0;
-  animation: slideIn 1s forwards;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Warning Message</title>
+  <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #000000, #8B0000);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-        
-      </style>
+    img.caution-icon {
+      height: 150px;
+      width: auto;
+      animation: shake 0.7s infinite;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 6px #ff0000);
+    }
+
+    h1.warning-text {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #ff0000;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      animation: flashRed 1.2s infinite;
+      user-select: none;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4500;
+    }
+
+    h1.sub-text {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2rem;
+      user-select: none;
+    }
+
+    button {
+      background-color: transparent;
+      border: 3px solid #ff0000;
+      color: #ff0000;
+      padding: 15px 50px;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #ff0000;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    button:hover {
+      background-color: #ff0000;
+      color: #fff;
+      box-shadow: 0 0 30px #ff4500;
+      transform: scale(1.05);
+    }
+
+    button a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
+
+    img.warning-gif {
+      margin-top: 3rem;
+      width: 250px;
+      filter: drop-shadow(0 0 8px #ff0000);
+    }
+
+    /* Animations */
+    @keyframes flashRed {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px) rotate(-5deg); }
+      50% { transform: translateX(5px) rotate(5deg); }
+      75% { transform: translateX(-5px) rotate(-5deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      h1.warning-text {
+        font-size: 2.2rem;
+      }
+
+      h1.sub-text {
+        font-size: 1.4rem;
+      }
+
+      button {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+      }
+
+      img.caution-icon {
+        height: 100px;
+      }
+
+      img.warning-gif {
+        width: 180px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <img src="caution.png"  alt="" height ="150px" width="auto">
-    <h1 class="slide-heading">😡It is personal adlin...</h1>
-    <h1 class="slide-heading">So, don't make others read👀</h1>
-    <button type="button" class="btn btn-outline-light">
-        <a href="./paper.html">Click here</a></button>
-        <div>
-          <img src="warning.gif" height ="100px" width="250px">
-        </div>
-        
+
+  <img src="caution.png" alt="Caution Icon" class="caution-icon" />
+
+  <h1 class="warning-text">😡 IT IS PERSONAL, ADLIN!</h1>
+  <h1 class="sub-text">So, don’t make others read 👀</h1>
+
+  <button type="button">
+    <a href="./paper.html">Click here</a>
+  </button>
+
+  <img src="warning.gif" alt="Warning GIF" class="warning-gif" />
+
 </body>
 </html>

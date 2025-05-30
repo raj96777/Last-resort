@@ -8,15 +8,61 @@
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       padding-top: 100px;
-      background: #fff;
+      background: linear-gradient(to bottom right, #fbeaff, #ffeaff);
+      color: #4b0082;
       overflow-x: hidden;
     }
 
-    div {
-      color: blueviolet;
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 1rem 1.5rem;
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .btn-outline-light {
+      background-color: #e8d8ff;
+      color: #4b0082;
+      border: 2px solid #7d3f98;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.6rem 1.5rem;
+      margin: 1.5rem auto;
+      border-radius: 50px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(160, 130, 255, 0.3);
+    }
+
+    .btn-outline-light:hover,
+    .btn-outline-light:focus {
+      background-color: #7d3f98;
+      color: #fff;
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    .btn-outline-light a {
+      text-decoration: none;
+      color: inherit;
     }
 
     canvas {
@@ -33,20 +79,22 @@
   <canvas id="confetti-canvas"></canvas>
 
   <div>
-    <h1>You can access this website wherever you can. <br>
-        whenever you want to speak with me, <br>
-        you can message in this website.
-    Don't share this link to anyone. <br>
-They can misuse</h1>
+    <h1>
+      You can access this website wherever you can. <br>
+      Whenever you want to speak with me, <br>
+      you can message in this website. <br>
+      <br>
+      <strong>Don't share this link to anyone. <br> They can misuse it.</strong>
+    </h1>
+
     <div>
-      <button type="button" class="btn btn-outline-light">
-        <a href="./main.html">Click here</a>
-      </button>
+      <a href="./main.html" class="btn btn-outline-light">Click here</a>
     </div>
-        
-    <h3>you said that you didn't have any phone. <br>
-       But, I want to connect with you <br>
-               I created this website for you. <br>
+
+    <h3>
+      You said that you didn't have any phone. <br>
+      But, I want to connect with you. <br>
+      I created this website for you.
     </h3>
   </div>
 
@@ -72,13 +120,13 @@ They can misuse</h1>
       });
     }
 
-    let opacity = 1;       // Start fully visible
-    let fadeOut = false;   // Flag for fade out
+    let opacity = 1;
+    let fadeOut = false;
     let animationId;
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.globalAlpha = opacity;  // Apply current opacity
+      ctx.globalAlpha = opacity;
 
       confetti.forEach(c => {
         ctx.beginPath();
@@ -89,7 +137,7 @@ They can misuse</h1>
         ctx.stroke();
       });
 
-      ctx.globalAlpha = 1; // Reset alpha for other drawings
+      ctx.globalAlpha = 1;
       update();
     }
 
@@ -110,12 +158,12 @@ They can misuse</h1>
       draw();
 
       if (fadeOut) {
-        opacity -= 0.01;   // Reduce opacity gradually
+        opacity -= 0.01;
         if (opacity <= 0) {
           opacity = 0;
           cancelAnimationFrame(animationId);
-          ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear fully
-          return;  // Stop animation
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          return;
         }
       }
 
@@ -127,9 +175,8 @@ They can misuse</h1>
       canvas.height = window.innerHeight;
     });
 
-    loop(); // Start animation
+    loop();
 
-    // Trigger fade out after 3 seconds
     setTimeout(() => {
       fadeOut = true;
     }, 3000);

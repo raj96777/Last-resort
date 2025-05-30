@@ -1,38 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
-    <title>Document</title>
-    <style>
-        body{
-            background-color: antiquewhite;
-            text-align: center;
-            
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weekly Memories</title>
+  <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #fff8f0;
+      font-family: 'Quicksand', sans-serif;
+      padding: 2rem;
+      color: #4b2e2e;
+    }
+
+    .entry {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease both;
+    }
+
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .entry-date {
+      color: #c06c84;
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .btn-outline-light a {
+      color: #6c3483;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn-outline-light:hover {
+      background-color: #fddde6;
+      border-color: #f4b4ce;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .entry {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div>
-        <h3>Date: 11/05/2025</h3> 
-        <h3>You wore pink dress. My sister gave you chocolate. You refused to get that chocolate.</h3>
-        <hr>
 
-    </div>
-    <div>
-        <h3>Date: 18/05/2025</h3>
-        <h3>Today, You do not come to church.</h3>
-        </div>
-        <hr>
-        <div>
-            <h3>Date: 25/05/2025</h3>
-        <h3>Today, You wore green dress and black pant. You did not look at me.</h3>
-        </div>
-        <hr>
-        <div>
-            <button type="button" class="btn btn-outline-light">
-                <a href="./gallery.html">Do you remember?</a></button>
-        </div>
+  <div class="entry">
+    <div class="entry-date">Date: 11/05/2025</div>
+    <h3>You wore pink dress. My sister gave you chocolate. You refused to get that chocolate.</h3>
+  </div>
+
+  <div class="entry">
+    <div class="entry-date">Date: 18/05/2025</div>
+    <h3>Today, You did not come to church.</h3>
+  </div>
+
+  <div class="entry">
+    <div class="entry-date">Date: 25/05/2025</div>
+    <h3>You wore green dress and black pant. You did not look at me.</h3>
+  </div>
+
+  <div class="btn-container">
+    <button type="button" class="btn btn-outline-light">
+      <a href="./gallery.html">Do you remember?</a>
+    </button>
+  </div>
+
 </body>
 </html>
