@@ -2,23 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>💖 Secret Message for You 💖</title>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Quicksand', sans-serif;
       background: linear-gradient(to right, #ffe6e6, #fff0f5);
-      padding: 40px 20px;
+      padding: 20px;
+      margin: 0;
       color: #333;
     }
 
-    form {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      max-width: 450px;
+    .container {
+      max-width: 500px;
       margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       border: 2px solid #ffc0cb;
     }
@@ -27,7 +33,7 @@
       text-align: center;
       font-family: 'Playfair Display', serif;
       color: #d6336c;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .heart {
@@ -54,14 +60,13 @@
     button {
       background-color: #ff69b4;
       color: white;
-      padding: 12px 25px;
+      padding: 12px;
+      width: 100%;
       font-size: 16px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
       transition: background-color 0.3s;
-      display: block;
-      margin: 15px auto 0;
     }
 
     button:hover {
@@ -70,28 +75,49 @@
 
     footer {
       text-align: center;
-      margin-top: 30px;
-      font-size: 14px;
-      color: #999;
+      margin-top: 25px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    @media screen and (max-width: 480px) {
+      .container {
+        padding: 20px 15px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .heart {
+        font-size: 32px;
+      }
+
+      button {
+        font-size: 15px;
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="heart">💌</div>
-  <h2>Send a Secret Message</h2>
+  <div class="container">
+    <div class="heart">💌</div>
+    <h2>Send a Secret Message</h2>
 
-  <form id="secretForm">
-    <input type="text" name="from_name" placeholder="Your Name (e.g., Rajkumar)" required>
-    <textarea name="message" placeholder="Type your heartfelt message to her..." required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+    <form id="secretForm">
+      <input type="text" name="from_name" placeholder="Your Name (e.g., Rajkumar)" required>
+      <textarea name="message" placeholder="Type your heartfelt message to her..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 
   <footer>Crafted with 💖 by Rajkumar</footer>
 
   <script>
     (function(){
-      emailjs.init("zyyTqQiH4zJsZlSYa");  // <-- Your actual Public Key
+      emailjs.init("zyyTqQiH4zJsZlSYa");  // Your Public Key
     })();
 
     document.getElementById("secretForm").addEventListener("submit", function(event) {
